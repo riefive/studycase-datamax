@@ -30,5 +30,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Keterangan
 - Envinronment Mockoon yang dipakai terdapat pada folder /public/mockoon-env.json
-- Live Demo pada heroku dengan link (https://riefive-crud.heroku.com) tanpa menggunakan data mockoon 
+- Live Demo pada heroku dengan link (https://riefive-crud.herokuapp.com) tanpa menggunakan data mockoon 
 - Gunakan user: demo@sample.com dan password: Demo@123456
