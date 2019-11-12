@@ -46,7 +46,6 @@ export default {
     },
     watch: {
         apiName (value) {
-            console.log(value)
             if (value) {
                 this.onRemove()
             }
