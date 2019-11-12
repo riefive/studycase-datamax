@@ -1,0 +1,296 @@
+{
+    "id": "mockoon_export",
+    "appVersion": "1.5.1",
+    "checksum": "4a45dbd4c9a814c5dfcd1c2a72e82744",
+    "subject": "full",
+    "data": [
+        {
+            "uuid": "b8a984d0-053e-11ea-b1bc-81ca4ac3dbb2",
+            "name": "New environment",
+            "endpointPrefix": "",
+            "latency": 0,
+            "port": 3000,
+            "routes": [
+                {
+                    "uuid": "b8a984d1-053e-11ea-b1bc-81ca4ac3dbb2",
+                    "documentation": "",
+                    "method": "get",
+                    "endpoint": "users",
+                    "responses": [
+                        {
+                            "uuid": "b8a984d2-053e-11ea-b1bc-81ca4ac3dbb2",
+                            "body": "[\n    {\n        \"_id\": \"{{ guid }}\",\n        \"number\": -1,\n        \"username\": \"demouser\",\n        \"password\": \"Demo@123456\",\n        \"firstName\": \"{{ firstName }}\",\n        \"lastName\": \"{{ lastName }}\",\n        \"work\": \"{{ company }}\",\n        \"email\": \"demo@sample.com\",\n        \"phone\": \"+628123456789\",\n        \"dateOfBirth\": \"{{ date '1900' '2000' 'DD/MM/YYYY' }}\",\n        \"address\": \"{{ street }} {{ int 1 100 }}\",\n        \"city\": \"{{ city }}\",\n        \"zipcode\": \"{{ zipcode }}\",\n        \"enabled\": {{ boolean true }}\n    },\n    {{#repeat 24}}\n    {\n        \"_id\": \"{{ guid }}\",\n        \"number\": {{ @index }},\n        \"username\": \"{{ lowercase (firstName) }}\",\n        \"password\": \"{{ lowercase (lastName) }}-{{ int 10000 50000 }}\",\n        \"firstName\": \"{{ firstName }}\",\n        \"lastName\": \"{{ lastName }}\",\n        \"work\": \"{{ company }}\",\n        \"email\": \"{{ email }}\",\n        \"phone\": \"{{ phone '+628xxxxxxxxxx' }}\",\n        \"dateOfBirth\": \"{{ date '1900' '2000' 'DD/MM/YYYY' }}\",\n        \"address\": \"{{ street }} {{ int 1 100 }}\",\n        \"city\": \"{{ city }}\",\n        \"zipcode\": \"{{ zipcode }}\",\n        \"enabled\": {{ boolean true }}\n    }\n    {{/ repeat}}\n]",
+                            "latency": 0,
+                            "statusCode": "200",
+                            "headers": [
+                                {
+                                    "key": "",
+                                    "value": ""
+                                }
+                            ],
+                            "filePath": "",
+                            "sendFileAsBody": false,
+                            "rules": []
+                        }
+                    ]
+                },
+                {
+                    "uuid": "b8a984d3-053e-11ea-b1bc-81ca4ac3dbb2",
+                    "documentation": "",
+                    "method": "get",
+                    "endpoint": "user/:id",
+                    "responses": [
+                        {
+                            "uuid": "b8a9abe0-053e-11ea-b1bc-81ca4ac3dbb2",
+                            "body": "{\n    \"_id\": \"{{ urlParam 'id' }}\",\n    \"username\": \"{{ lowercase (firstName) }}\",\n    \"password\": \"{{ lowercase (lastName) }}-{{ int 10000 50000 }}\",\n    \"firstName\": \"{{ firstName }}\",\n    \"lastName\": \"{{ lastName }}\",\n    \"work\": \"{{ company }}\",\n    \"email\": \"{{ email }}\",\n    \"phone\": \"{{ phone '+628xxxxxxxxxx' }}\",\n    \"dateOfBirth\": \"{{ date '1900' '2000' 'DD/MM/YYYY' }}\",\n    \"address\": \"{{ street }} {{ int 1 100 }} \",\n    \"city\": \"{{ city }}\",\n    \"zipcode\": \"{{ zipcode }}\",\n    \"enabled\": {{ boolean true }}\n}",
+                            "latency": 0,
+                            "statusCode": "200",
+                            "headers": [
+                                {
+                                    "key": "",
+                                    "value": ""
+                                }
+                            ],
+                            "filePath": "",
+                            "sendFileAsBody": false,
+                            "rules": []
+                        }
+                    ]
+                },
+                {
+                    "uuid": "b8a9abe1-053e-11ea-b1bc-81ca4ac3dbb2",
+                    "documentation": "",
+                    "method": "put",
+                    "endpoint": "user/:id",
+                    "responses": [
+                        {
+                            "uuid": "b8a9abe2-053e-11ea-b1bc-81ca4ac3dbb2",
+                            "body": "{\n    \"_id\": \"{{ urlParam 'id' }}\",\n    \"username\": \"{{ body 'username' }}\",\n    \"password\": \"{{ body 'password' }}\",\n    \"firstName\": \"{{ body 'firstName' }}\",\n    \"lastName\": \"{{ body 'lastName' }}\",\n    \"work\": \"{{ body 'work' }}\",\n    \"email\": \"{{ body 'email' }}\",\n    \"phone\": \"{{ body 'phone' }}\",\n    \"dateOfBirth\": \"{{ body 'dateOfBirth' }}\",\n    \"address\": \"{{ body 'address' }}\",\n    \"city\": \"{{ body 'city' }}\",\n    \"zipcode\": \"{{ body 'zipcode' }}\",\n    \"enabled\": {{ body 'enabled' false }}\n}",
+                            "latency": 0,
+                            "statusCode": "200",
+                            "headers": [
+                                {
+                                    "key": "",
+                                    "value": ""
+                                }
+                            ],
+                            "filePath": "",
+                            "sendFileAsBody": false,
+                            "rules": []
+                        }
+                    ]
+                },
+                {
+                    "uuid": "b8a9abe3-053e-11ea-b1bc-81ca4ac3dbb2",
+                    "documentation": "",
+                    "method": "delete",
+                    "endpoint": "user/:id",
+                    "responses": [
+                        {
+                            "uuid": "b8a9abe4-053e-11ea-b1bc-81ca4ac3dbb2",
+                            "body": "{\n    \"_id\": \"{{ urlParam 'id' }}\"\n}",
+                            "latency": 0,
+                            "statusCode": "200",
+                            "headers": [
+                                {
+                                    "key": "",
+                                    "value": ""
+                                }
+                            ],
+                            "filePath": "",
+                            "sendFileAsBody": false,
+                            "rules": []
+                        }
+                    ]
+                },
+                {
+                    "uuid": "b8a9abe5-053e-11ea-b1bc-81ca4ac3dbb2",
+                    "documentation": "",
+                    "method": "post",
+                    "endpoint": "user",
+                    "responses": [
+                        {
+                            "uuid": "b8a9abe6-053e-11ea-b1bc-81ca4ac3dbb2",
+                            "body": "{\n    \"_id\": \"{{ guid }}\",\n    \"username\": \"{{ body 'username' }}\",\n    \"password\": \"{{ body 'password' }}\",\n    \"firstName\": \"{{ body 'firstName' }}\",\n    \"lastName\": \"{{ body 'lastName' }}\",\n    \"work\": \"{{ body 'work' }}\",\n    \"email\": \"{{ body 'email' }}\",\n    \"phone\": \"{{ body 'phone' }}\",\n    \"dateOfBirth\": \"{{ body 'dateOfBirth' }}\",\n    \"address\": \"{{ body 'address' }}\",\n    \"city\": \"{{ body 'city' }}\",\n    \"zipcode\": \"{{ body 'zipcode' }}\",\n    \"enabled\": {{ body 'enabled' false }}\n}",
+                            "latency": 0,
+                            "statusCode": "200",
+                            "headers": [
+                                {
+                                    "key": "",
+                                    "value": ""
+                                }
+                            ],
+                            "filePath": "",
+                            "sendFileAsBody": false,
+                            "rules": []
+                        }
+                    ]
+                },
+                {
+                    "uuid": "b8a9abe7-053e-11ea-b1bc-81ca4ac3dbb2",
+                    "documentation": "",
+                    "method": "get",
+                    "endpoint": "products",
+                    "responses": [
+                        {
+                            "uuid": "b8a9abe8-053e-11ea-b1bc-81ca4ac3dbb2",
+                            "body": "[\n{{#repeat 25}}\n{\n\t\"_id\": \"{{ guid }}\",\n    \"number\": {{ @index }},\n    \"name\": \"{{ lowercase (firstName) }}\",\n    \"title\": \"{{ lorem 2 }}\",\n    \"description\": \"{{ lorem 25 }}\",\n    \"image\": \"img{{int 0 100}}.png\",\n    \"color\": \"{{ hexColor websafe=true }}\",\n    \"quantity\": {{ int 0 1000}},\n    \"enabled\": {{ boolean true }}\n}\n{{/ repeat}}\n]",
+                            "latency": 0,
+                            "statusCode": "200",
+                            "headers": [
+                                {
+                                    "key": "",
+                                    "value": ""
+                                }
+                            ],
+                            "filePath": "",
+                            "sendFileAsBody": false,
+                            "rules": []
+                        }
+                    ]
+                },
+                {
+                    "uuid": "b8a9abe9-053e-11ea-b1bc-81ca4ac3dbb2",
+                    "documentation": "",
+                    "method": "get",
+                    "endpoint": "product/:id",
+                    "responses": [
+                        {
+                            "uuid": "b8a9abea-053e-11ea-b1bc-81ca4ac3dbb2",
+                            "body": "{\n    \"_id\": \"{{ urlParam 'id' }}\",\n    \"name\": \"{{ lowercase (firstName) }}\",\n    \"title\": \"{{ lorem 2 }}\",\n    \"description\": \"{{ lorem 25 }}\",\n    \"image\": \"img{{int 0 100}}.png\",\n    \"color\": \"{{ hexColor websafe=true }}\",\n    \"quantity\": {{ int 0 1000 }},\n    \"enabled\": {{ boolean true }}\n}",
+                            "latency": 0,
+                            "statusCode": "200",
+                            "headers": [
+                                {
+                                    "key": "",
+                                    "value": ""
+                                }
+                            ],
+                            "filePath": "",
+                            "sendFileAsBody": false,
+                            "rules": []
+                        }
+                    ]
+                },
+                {
+                    "uuid": "b8a9abeb-053e-11ea-b1bc-81ca4ac3dbb2",
+                    "documentation": "",
+                    "method": "put",
+                    "endpoint": "product/:id",
+                    "responses": [
+                        {
+                            "uuid": "b8a9abec-053e-11ea-b1bc-81ca4ac3dbb2",
+                            "body": "{\n    \"_id\": \"{{ urlParam 'id' }}\",\n    \"name\": \"{{ body 'name' }}\",\n    \"title\": \"{{ body 'title' }}\",\n    \"description\": \"{{ body 'description' }}\",\n    \"image\": \"{{ body 'image' }}\",\n    \"color\": \"{{ body 'color' }}\",\n    \"quantity\": {{ body 'quantity' 0 }},\n    \"enabled\": {{ body 'enabled' false }}\n}",
+                            "latency": 0,
+                            "statusCode": "200",
+                            "headers": [
+                                {
+                                    "key": "",
+                                    "value": ""
+                                }
+                            ],
+                            "filePath": "",
+                            "sendFileAsBody": false,
+                            "rules": []
+                        }
+                    ]
+                },
+                {
+                    "uuid": "b8a9abed-053e-11ea-b1bc-81ca4ac3dbb2",
+                    "documentation": "",
+                    "method": "delete",
+                    "endpoint": "product/:id",
+                    "responses": [
+                        {
+                            "uuid": "b8a9abee-053e-11ea-b1bc-81ca4ac3dbb2",
+                            "body": "{\n    \"_id\": \"{{ urlParam 'id' }}\"\n}",
+                            "latency": 0,
+                            "statusCode": "200",
+                            "headers": [
+                                {
+                                    "key": "",
+                                    "value": ""
+                                }
+                            ],
+                            "filePath": "",
+                            "sendFileAsBody": false,
+                            "rules": []
+                        }
+                    ]
+                },
+                {
+                    "uuid": "b8a9abef-053e-11ea-b1bc-81ca4ac3dbb2",
+                    "documentation": "",
+                    "method": "post",
+                    "endpoint": "product",
+                    "responses": [
+                        {
+                            "uuid": "b8a9abf0-053e-11ea-b1bc-81ca4ac3dbb2",
+                            "body": "{\n    \"_id\": \"{{ guid }}\",\n    \"name\": \"{{ body 'name' }}\",\n    \"title\": \"{{ body 'title' }}\",\n    \"description\": \"{{ body 'description' }}\",\n    \"image\": \"{{body 'image'}}\",\n    \"color\": \"{{ body 'color' }}\",\n    \"quantity\": {{ body 'quantity' 0 }},\n    \"enabled\": {{ body 'enabled' false }}\n}",
+                            "latency": 0,
+                            "statusCode": "200",
+                            "headers": [
+                                {
+                                    "key": "",
+                                    "value": ""
+                                }
+                            ],
+                            "filePath": "",
+                            "sendFileAsBody": false,
+                            "rules": []
+                        }
+                    ]
+                },
+                {
+                    "uuid": "b8a9abf1-053e-11ea-b1bc-81ca4ac3dbb2",
+                    "documentation": "",
+                    "method": "get",
+                    "endpoint": "",
+                    "responses": [
+                        {
+                            "uuid": "b8a9abf2-053e-11ea-b1bc-81ca4ac3dbb2",
+                            "body": "{\n    \"yourIp\": \"{{ ipv4 }}\",\n    \"dateTime\": \"{{ date '2019' '2020' }}\",\n    \"message\": \"{{ lorem 25 }}\"\n}",
+                            "latency": 0,
+                            "statusCode": "200",
+                            "headers": [
+                                {
+                                    "key": "",
+                                    "value": ""
+                                }
+                            ],
+                            "filePath": "",
+                            "sendFileAsBody": false,
+                            "rules": []
+                        }
+                    ]
+                }
+            ],
+            "proxyMode": false,
+            "proxyHost": "",
+            "https": false,
+            "cors": true,
+            "headers": [
+                {
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "*"
+                },
+                {
+                    "key": "Access-Control-Allow-Headers",
+                    "value": "Origin, X-Requested-With, Content-Type, Accept"
+                },
+                {
+                    "key": "Access-Control-Allow-Methods",
+                    "value": "GET, POST, PUT, DELETE"
+                },
+                {
+                    "key": "Accept",
+                    "value": "application/json"
+                },
+                {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                }
+            ]
+        }
+    ]
+}
