@@ -70,7 +70,7 @@ export default {
                 }
             }
             setTimeout(() => {
-                console.log(`${type} data of ${this.table} is success.`)
+                //console.log(`${type} data of ${this.table} is success.`)
             }, 1000)
         }
     }
